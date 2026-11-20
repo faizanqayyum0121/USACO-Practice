@@ -1,3 +1,9 @@
+/*
+* Problem: Do You Know Your ABC's
+* Platform: USACO Guide
+* Status: Accepted
+* Date: 11/20/2026
+*/
 import java.io.*;
 import java.util.*;
 

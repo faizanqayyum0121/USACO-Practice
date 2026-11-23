@@ -16,16 +16,17 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int[][] swaps = new int[2][n];
         int[] guesses = new int[n];
-        for(i = 0; i < n; i++ ){
+        for(int i = 0; i < n; i++ ){
             st = new StringTokenizer(br.readLine());
             swaps[0][i] = (Integer.parseInt(st.nextToken()))-1;
             swaps[1][i] = (Integer.parseInt(st.nextToken()))-1;
             guesses[i] = (Integer.parseInt(st.nextToken()))-1;
         }
 
-        int[] shells = {1, 2, 3};
+
         int maxScore = Integer.MIN_VALUE;
         for(int j = 1; j < 4; j++) {
+            int[] shells = {1, 2, 3};
             int shellPos = j;
             int score = 0;
             for (int i = 0; i < n; i++) {

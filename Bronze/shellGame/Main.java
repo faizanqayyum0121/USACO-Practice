@@ -1,7 +1,7 @@
 /*
 * Problem: Shell Game
 * Platform: USACO Guide
-* Status:
+* Status: Accepted
 * Date:11/23/2026
 */
 import java.io.*;

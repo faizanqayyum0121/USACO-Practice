@@ -18,10 +18,28 @@ public class Main {
         int[] guesses = new int[n];
         for(i = 0; i < n; i++ ){
             st = new StringTokenizer(br.readLine());
-            swaps[0][i] = Integer.parseInt(st.nextToken());
-            swaps[1][i] = Integer.parseInt(st.nextToken());
-            guesses[i] = Integer.parseInt(st.nextToken());
+            swaps[0][i] = (Integer.parseInt(st.nextToken()))-1;
+            swaps[1][i] = (Integer.parseInt(st.nextToken()))-1;
+            guesses[i] = (Integer.parseInt(st.nextToken()))-1;
         }
+
+        int[] shells = {1, 2, 3};
+        int maxScore = Integer.MIN_VALUE;
+        for(int j = 1; j < 4; j++) {
+            int shellPos = j;
+            int score = 0;
+            for (int i = 0; i < n; i++) {
+                int temp = shells[swaps[0][i]];
+                shells[swaps[0][i]] = shells[swaps[1][i]];
+                shells[swaps[1][i]] = temp;
+                if (shells[guesses[i]] == shellPos)
+                    score++;
+            }
+            if (score > maxScore)
+                maxScore = score;
+            score = 0;
+        }
+        out.print(maxScore);
 
         out.close();
     }

@@ -12,14 +12,14 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter out = new PrintWriter(System.out);
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
+
 
         List<Long> maxes = new ArrayList<>();
         List<Long> buckets = new ArrayList<>();
         for(int i = 0; i < 3; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
             maxes.add(Long.parseLong(st.nextToken()));
             buckets.add(Long.parseLong(st.nextToken()));
-            st = new StringTokenizer(br.readLine());
         }
         int curr = 0;
         int next = 1;

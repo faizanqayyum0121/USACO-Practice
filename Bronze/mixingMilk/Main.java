@@ -14,7 +14,38 @@ public class Main {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-
+        List<Long> maxes = new ArrayList<>();
+        List<Long> buckets = new ArrayList<>();
+        for(int i = 0; i < 3; i++){
+            maxes.add(Long.parseLong(st.nextToken()));
+            buckets.add(Long.parseLong(st.nextToken()));
+            st = new StringTokenizer(br.readLine());
+        }
+        int curr = 0;
+        int next = 1;
+        for(int i = 0; i < 4; i++){
+            if(next == 3){
+                next = 0;
+            }
+            if(curr == 3){
+                curr = 0;
+            }
+            long max = maxes.get(next) - buckets.get(next);
+            long pourable = buckets.get(curr);
+            long poured = 0;
+            if(pourable > max){
+                poured = max;
+            } else {
+                poured = pourable;
+            }
+            buckets.set(curr, pourable-poured);
+            buckets.set(next, buckets.get(next)+poured);
+            curr++;
+            next++;
+        }
+        out.println(buckets.get(0));
+        out.println(buckets.get(1));
+        out.println(buckets.get(2));
         out.close();
     }
 }

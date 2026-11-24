@@ -1,7 +1,7 @@
 /*
  * Problem: Mixing Milk
  * Platform: USACO Guide
- * Status:
+ * Status: Accepted
  * Date:11/24/2026
  */
 import java.io.*;

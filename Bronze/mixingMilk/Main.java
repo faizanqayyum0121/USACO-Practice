@@ -23,7 +23,7 @@ public class Main {
         }
         int curr = 0;
         int next = 1;
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 100; i++){
             if(next == 3){
                 next = 0;
             }

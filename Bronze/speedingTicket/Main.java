@@ -1,7 +1,7 @@
 /*
  * Problem: Speeding Ticket
  * Platform: USACO Guide
- * Status:
+ * Status: Accepted
  * Date:11/25/2026
  */
 import java.io.*;

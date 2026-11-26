@@ -37,6 +37,12 @@ public class Main {
         int lengthTraveled = 0;
         int segment = 0;
         for(int i = 0; i < m; i++){
+            //If already finished section advance before moving on
+            if(lengthTraveled == currentRoadLength){
+                segment++;
+                currentRoadLength += road[0][segment];
+                currentRoadLimit = road[1][segment];
+            }
             int bessieSpeed = drive[1][i];
             lengthTraveled += drive[0][i];
 

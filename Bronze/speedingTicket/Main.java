@@ -31,7 +31,33 @@ public class Main {
             drive[0][i] = Integer.parseInt(st.nextToken());
             drive[1][i] = Integer.parseInt(st.nextToken());
         }
+        int maxOver = 0;
+        int currentRoadLength = road[0][0];
+        int currentRoadLimit = road[1][0];
+        int lengthTraveled = 0;
+        int segment = 0;
+        for(int i = 0; i < m; i++){
+            int bessieSpeed = drive[1][i];
+            lengthTraveled += drive[0][i];
 
+            if(bessieSpeed > currentRoadLimit){
+                if((bessieSpeed-currentRoadLimit) > maxOver){
+                    maxOver = bessieSpeed - currentRoadLimit;
+                }
+            }
+
+            while(currentRoadLength < lengthTraveled){
+                segment++;
+                currentRoadLength += road[0][segment];
+                currentRoadLimit = road[1][segment];
+                if(bessieSpeed > currentRoadLimit){
+                    if((bessieSpeed-currentRoadLimit) > maxOver){
+                        maxOver = bessieSpeed - currentRoadLimit;
+                    }
+                }
+            }
+        }
+        out.print(maxOver);
         out.close();
     }
 }

@@ -32,12 +32,8 @@ public class Main {
             }
             long max = maxes.get(next) - buckets.get(next);
             long pourable = buckets.get(curr);
-            long poured = 0;
-            if(pourable > max){
-                poured = max;
-            } else {
-                poured = pourable;
-            }
+            long poured = Math.min(pourable, max);
+            //Take the lower of what you are able to pour and the room for you to pour
             buckets.set(curr, pourable-poured);
             buckets.set(next, buckets.get(next)+poured);
             curr++;
